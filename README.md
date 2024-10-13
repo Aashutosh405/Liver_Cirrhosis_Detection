@@ -2,6 +2,7 @@
 
 ![Interface Screenshot](InterfacePart1.png)
 ![Interface Screenshot](InterfacePart2.png)
+
 *An image of the interface where users input patient data.*
 
 ## Overview
@@ -16,7 +17,7 @@ The web-based interface allows users to input relevant patient information and g
 - Built using the **CatBoost** machine learning model for accurate predictions.
 - **Flask** is used to create the backend for the web app.
 
-![Result Page Screenshot]()  
+![Result Page Screenshot](result.png)  
 *An image of the result page showing the risk category.*
 
 ## Libraries Used
