@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Cirrhosis Risk Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .form-container {
+            max-width: 400px;
+            width: 100%;
+            height: 90vh;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+            color: #555;
+        }
+
+        select, input[type="number"] {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin: 8px 0 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/predict" method="POST">
+            <h2>Liver Cirrhosis Risk Prediction</h2>
+
+            <div class="form-group">
+                <label for="Drug">Drug (1 for Placebo, 0 for D-penicillamine):</label>
+                <select id="Drug" name="Drug" required>
+                    <option value="1">Placebo</option>
+                    <option value="0">D-penicillamine</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Age">Age:</label>
+                <input type="number" id="Age" name="Age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Sex">Sex (1 for Male, 0 for Female):</label>
+                <select id="Sex" name="Sex" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Ascites">Ascites (1 for Yes, 0 for No):</label>
+                <select id="Ascites" name="Ascites" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Hepatomegaly">Hepatomegaly (1 for Yes, 0 for No):</label>
+                <select id="Hepatomegaly" name="Hepatomegaly" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Spiders">Spiders (1 for Yes, 0 for No):</label>
+                <select id="Spiders" name="Spiders" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Edema">Edema (1 for Yes, 0 for No):</label>
+                <select id="Edema" name="Edema" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Bilirubin">Bilirubin:</label>
+                <input type="number" id="Bilirubin" name="Bilirubin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Cholesterol">Cholesterol:</label>
+                <input type="number" id="Cholesterol" name="Cholesterol" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Albumin">Albumin:</label>
+                <input type="number" id="Albumin" name="Albumin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Copper">Copper:</label>
+                <input type="number" id="Copper" name="Copper" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Alk_Phos">Alk_Phos:</label>
+                <input type="number" id="Alk_Phos" name="Alk_Phos" required>
+            </div>
+
+            <div class="form-group">
+                <label for="SGOT">SGOT:</label>
+                <input type="number" id="SGOT" name="SGOT" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Tryglicerides">Triglycerides:</label>
+                <input type="number" id="Tryglicerides" name="Tryglicerides" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Platelets">Platelets:</label>
+                <input type="number" id="Platelets" name="Platelets" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Prothrombin">Prothrombin:</label>
+                <input type="number" id="Prothrombin" name="Prothrombin" required>
+            </div>
+
+            <input type="submit" value="Predict Risk">
+        </form>
+    </div>
+</body>
+</html>
